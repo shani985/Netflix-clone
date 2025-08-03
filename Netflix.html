@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://assets.nflxext.com/ffe/siteui/vlv3/ab180a27-b661-44d7-a6d9-940cb32f2f4a/7fb62e44-31fd-4e1f-b6ad-0b5c8c2a20ef/IN-en-20231009-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 90vh;
+      }
+
+      .movie-row {
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .movie-row::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+
+      .movie-card {
+        transition: transform 0.3s ease;
+      }
+
+      .movie-card:hover {
+        transform: scale(1.1);
+        z-index: 10;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          height: 70vh;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav
+      class="flex justify-between items-center px-4 py-4 md:px-12 absolute w-full z-50"
+    >
+      <div class="flex items-center">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix Logo"
+          class="h-8 md:h-12"
+        />
+      </div>
+      <div class="flex items-center space-x-4">
+        <div class="hidden md:block">
+          <div class="relative">
+            <i
+              class="fas fa-globe absolute left-3 top-1/2 transform -translate-y-1/2"
+            ></i>
+            <select
+              class="bg-black text-white border border-gray-600 rounded px-8 py-1 text-sm"
+            >
+              <option>English</option>
+              <option>Hindi</option>
+            </select>
+          </div>
+        </div>
+        <button
+          class="bg-red-600 text-white px-3 py-1 rounded text-sm md:text-base"
+        >
+          Sign In
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-center px-4">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">
+          Unlimited movies, TV shows and more
+        </h1>
+        <p class="text-xl md:text-2xl mb-6">Watch anywhere. Cancel anytime.</p>
+        <p class="text-lg mb-8">
+          Ready to watch? Enter your email to create or restart your membership.
+        </p>
+        <div class="flex flex-col md:flex-row gap-4">
+          <input
+            type="email"
+            placeholder="Email address"
+            class="bg-black bg-opacity-70 border border-gray-600 rounded px-4 py-3 md:py-4 md:w-2/3"
+          />
+          <button
+            class="bg-red-600 text-white px-6 py-3 rounded font-bold text-xl flex items-center justify-center"
+          >
+            Get Started <i class="fas fa-chevron-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="px-4 md:px-12 py-12">
+      <!-- Popular on Netflix -->
+      <section class="mb-12">
+        <h2 class="text-xl md:text-2xl font-bold mb-4">Popular on Netflix</h2>
+        <div class="movie-row flex overflow-x-scroll space-x-4 pb-4">
+          <!-- Movie cards will be added here by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Trending Now -->
+      <section class="mb-12">
+        <h2 class="text-xl md:text-2xl font-bold mb-4">Trending Now</h2>
+        <div class="movie-row flex overflow-x-scroll space-x-4 pb-4">
+          <!-- Movie cards will be added here by JavaScript -->
+        </div>
+      </section>
+
+      <!-- Watch Again -->
+      <section class="mb-12">
+        <h2 class="text-xl md:text-2xl font-bold mb-4">Watch Again</h2>
+        <div class="movie-row flex overflow-x-scroll space-x-4 pb-4">
+          <!-- Movie cards will be added here by JavaScript -->
+        </div>
+      </section>
+
+      <!-- New Releases -->
+      <section class="mb-12">
+        <h2 class="text-xl md:text-2xl font-bold mb-4">New Releases</h2>
+        <div class="movie-row flex overflow-x-scroll space-x-4 pb-4">
+          <!-- Movie cards will be added here by JavaScript -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 py-12 px-4 md:px-12">
+      <div class="max-w-6xl mx-auto">
+        <p class="mb-8">Questions? Call 000-800-919-1694</p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <a href="#" class="text-sm hover:underline">FAQ</a>
+          <a href="#" class="text-sm hover:underline">Help Center</a>
+          <a href="#" class="text-sm hover:underline">Account</a>
+          <a href="#" class="text-sm hover:underline">Media Center</a>
+          <a href="#" class="text-sm hover:underline">Investor Relations</a>
+          <a href="#" class="text-sm hover:underline">Jobs</a>
+          <a href="#" class="text-sm hover:underline">Ways to Watch</a>
+          <a href="#" class="text-sm hover:underline">Terms of Use</a>
+          <a href="#" class="text-sm hover:underline">Privacy</a>
+          <a href="#" class="text-sm hover:underline">Cookie Preferences</a>
+          <a href="#" class="text-sm hover:underline">Corporate Information</a>
+          <a href="#" class="text-sm hover:underline">Contact Us</a>
+          <a href="#" class="text-sm hover:underline">Speed Test</a>
+          <a href="#" class="text-sm hover:underline">Legal Notices</a>
+          <a href="#" class="text-sm hover:underline">Only on Netflix</a>
+        </div>
+        <div class="mb-4">
+          <div class="relative inline-block">
+            <i
+              class="fas fa-globe absolute left-3 top-1/2 transform -translate-y-1/2"
+            ></i>
+            <select
+              class="bg-black text-white border border-gray-600 rounded px-8 py-1 text-sm"
+            >
+              <option>English</option>
+              <option>Hindi</option>
+            </select>
+          </div>
+        </div>
+        <p class="text-sm">Netflix India</p>
+      </div>
+    </footer>
+
+    <script>
+      // Movie data
+      const movies = [
+        {
+          title: "Batman  ",
+          image:
+            "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+          category: "popular",
+        },
+        {
+          title: "The Witcher",
+          image:
+            "https://image.tmdb.org/t/p/w500/8WUVHemHFH2ZIP6NWkwlHWsyrEL.jpg",
+          category: "popular",
+        },
+        {
+          title: "Money Heist",
+          image:
+            "https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg",
+          category: "popular",
+        },
+        {
+          title: "Dark",
+          image:
+            "https://image.tmdb.org/t/p/w500/5LoHuHWA4H8jElFlZDvsmU2n63b.jpg",
+          category: "popular",
+        },
+        {
+          title: "Squid Game",
+          image:
+            "https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg",
+          category: "trending",
+        },
+        {
+          title: "Wednesday",
+          image:
+            "https://image.tmdb.org/t/p/w500/jeGtaMwGxPmQN5xM4ClnwPQcNQz.jpg",
+          category: "trending",
+        },
+        {
+          title: "Peaky Blinders",
+          image:
+            "https://image.tmdb.org/t/p/w500/6PX0r5TRRU5y0jZ70y1OtbLYmoD.jpg",
+          category: "trending",
+        },
+        {
+          title: "Breaking Bad",
+          image:
+            "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg",
+          category: "watch-again",
+        },
+        {
+          title: "Friends",
+          image:
+            "https://image.tmdb.org/t/p/w500/f496cm9enuEsZkSPzCwnTESEK5s.jpg",
+          category: "watch-again",
+        },
+        {
+          title: "The Office",
+          image:
+            "https://image.tmdb.org/t/p/w500/qWnJzyZhyy74gjpSjIXWmuk0ifX.jpg",
+          category: "watch-again",
+        },
+        {
+          title: "The Matrix ",
+          image:
+            "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg",
+          category: "new-releases",
+        },
+        {
+          title: "Bridgerton",
+          image:
+            "https://image.tmdb.org/t/p/w500/clnyhPqj1SNgpAdeSS6a6fwE6Bo.jpg",
+          category: "new-releases",
+        },
+        {
+          title: "Dune: Part Two",
+          image:
+            "https://image.tmdb.org/t/p/w500/8b8R8l88Qje9dn9OE8PY05Nxl1X.jpg",
+          category: "new-releases",
+        },
+        {
+          title: "Fast X",
+          image:
+            "https://image.tmdb.org/t/p/w500/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+          category: "new-releases",
+        },
+        {
+          title: "Avengers: Endgame ",
+          image:
+            "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+          category: "popular",
+        },
+        {
+          title: "The Mandalorian",
+          image:
+            "https://image.tmdb.org/t/p/w500/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+          category: "trending",
+        },
+        {
+          title: "The Last of Us",
+          image:
+            "https://image.tmdb.org/t/p/w500/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",
+          category: "new-releases",
+        },
+        {
+          title: "Avatar: The Way of Water",
+          image:
+            "https://image.tmdb.org/t/p/w500/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg",
+          category: "trending",
+        },
+      ];
+      // Function to create movie cards
+      function createMovieCards() {
+        const popularRow = document.querySelectorAll(".movie-row")[0];
+        const trendingRow = document.querySelectorAll(".movie-row")[1];
+        const watchAgainRow = document.querySelectorAll(".movie-row")[2];
+        const newReleasesRow = document.querySelectorAll(".movie-row")[3];
+        movies.forEach((movie) => {
+          const card = document.createElement("div");
+          card.className =
+            "movie-card flex-shrink-0 w-40 md:w-56 cursor-pointer relative";
+          card.innerHTML = `
+                    <img src="${movie.image}" alt="${movie.title}" class="w-full h-full object-cover rounded">
+                    <div class="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                        <div class="text-center p-2">
+                            <h3 class="font-bold text-lg">${movie.title}</h3>
+                            <div class="flex justify-center space-x-4 mt-2">
+                                <button class="bg-white text-black rounded-full w-8 h-8 flex items-center justify-center">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button class="border border-white rounded-full w-8 h-8 flex items-center justify-center">
+                                    <i class="fas fa-info"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+          if (movie.category === "popular") {
+            popularRow.appendChild(card);
+          } else if (movie.category === "trending") {
+            trendingRow.appendChild(card);
+          } else if (movie.category === "watch-again") {
+            watchAgainRow.appendChild(card);
+          } else if (movie.category === "new-releases") {
+            newReleasesRow.appendChild(card);
+          }
+        });
+      }
+      // Initialize when page loads
+      document.addEventListener("DOMContentLoaded", createMovieCards);
+      // Scroll effect for navbar
+      window.addEventListener("scroll", function () {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 100) {
+          nav.classList.add("bg-black");
+          nav.classList.remove("absolute");
+        } else {
+          nav.classList.remove("bg-black");
+          nav.classList.add("absolute");
+        }
+      });
+    </script>
+    <p
+      style="
+        border-radius: 8px;
+        text-align: center;
+        font-size: 12px;
+        color: #fff;
+        margin-top: 16px;
+        position: fixed;
+        left: 8px;
+        bottom: 8px;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 4px 8px;
+      "
+    >
+      Made with
+      <img
+        src="https://enzostvs-deepsite.hf.space/logo.svg"
+        alt="DeepSite Logo"
+        style="
+          width: 16px;
+          height: 16px;
+          vertical-align: middle;
+          display: inline-block;
+          margin-right: 3px;
+          filter: brightness(0) invert(1);
+        "
+      /><a
+        href="https://enzostvs-deepsite.hf.space"
+        style="color: #fff; text-decoration: underline"
+        target="_blank"
+        >DeepSite</a
+      >
+      - 🧬
+      <a
+        href="https://enzostvs-deepsite.hf.space?remix=NIKHLESH7076/nikhilesh-netflix"
+        style="color: #fff; text-decoration: underline"
+        target="_blank"
+        >Remix</a
+      >
+    </p>
+  </body>
+</html>
